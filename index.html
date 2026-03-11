@@ -21,9 +21,8 @@
             padding-bottom: 120px;
         }
 
-        /* Branding */
         header { text-align: center; padding: 80px 20px 40px; }
-        .logo-img { width: 150px; margin-bottom: 25px; filter: drop-shadow(0 0 15px rgba(201,168,76,0.2)); }
+        .logo-img { width: 140px; margin-bottom: 25px; filter: drop-shadow(0 0 15px rgba(201,168,76,0.2)); }
         
         .brand-name { 
             font-family: 'Cormorant Garamond', serif; font-size: 42px; 
@@ -37,96 +36,49 @@
 
         .intro-text { 
             max-width: 600px; margin: 40px auto; padding: 0 25px;
-            font-family: 'Cormorant Garamond', serif; font-size: 26px; 
-            font-style: italic; color: #fff; line-height: 1.4; opacity: 0.9;
+            font-family: 'Cormorant Garamond', serif; font-size: 24px; 
+            font-style: italic; color: #fff; line-height: 1.4; opacity: 0.9; text-align: center;
         }
 
         /* SECCIÓN ORÁCULO */
-        .oracle-section {
-            text-align: center; margin: 60px auto 100px; padding: 0 20px;
-        }
-        .oracle-label {
-            font-size: 9px; letter-spacing: 4px; color: var(--oro); 
-            text-transform: uppercase; margin-bottom: 25px; display: block;
-        }
+        .oracle-section { text-align: center; margin: 60px auto 100px; padding: 0 20px; }
+        .oracle-label { font-size: 9px; letter-spacing: 4px; color: var(--oro); text-transform: uppercase; margin-bottom: 25px; display: block; }
         .oracle-btn {
-            display: inline-block;
-            padding: 20px 45px;
-            border: 1px solid var(--oro);
-            color: var(--oro);
-            text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 5px;
-            font-weight: 400;
-            transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            display: inline-block; padding: 18px 45px; border: 1px solid var(--oro);
+            color: var(--oro); text-decoration: none; font-size: 13px;
+            letter-spacing: 5px; transition: all 0.6s ease;
             background: rgba(201, 168, 76, 0.02);
-            position: relative;
-            box-shadow: inset 0 0 0 0 rgba(201, 168, 76, 0.1);
         }
-        .oracle-btn:hover {
-            background: var(--oro);
-            color: #000;
-            box-shadow: 0 0 40px rgba(201, 168, 76, 0.4);
-            transform: translateY(-3px);
-        }
-        .oracle-sub {
-            font-size: 11px; color: #8a8070; margin-top: 25px; font-style: italic; font-weight: 200;
-        }
+        .oracle-btn:hover { background: var(--oro); color: #000; box-shadow: 0 0 30px rgba(201, 168, 76, 0.4); transform: translateY(-3px); }
 
-        /* Secciones del Catálogo */
-        .section-title {
-            text-align: center; margin: 80px 0 40px;
-        }
-        .section-title h2 {
-            font-family: 'Cormorant Garamond', serif; font-size: 34px;
-            letter-spacing: 7px; text-transform: uppercase; color: var(--oro);
-            font-weight: 300;
-        }
+        /* Catálogo */
+        .section-title { text-align: center; margin: 80px 0 40px; }
+        .section-title h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; letter-spacing: 6px; text-transform: uppercase; color: var(--oro); font-weight: 300; }
 
-        .grid {
-            display: grid; grid-template-columns: 1fr; gap: 40px; padding: 0 25px;
-            max-width: 1100px; margin: 0 auto;
-        }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 40px; padding: 0 25px; max-width: 1100px; margin: 0 auto; }
         @media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
 
-        /* Tarjeta de Perfume */
-        .card {
-            background: linear-gradient(180deg, #0d0b06 0%, #050505 100%);
-            border: 1px solid var(--borde); position: relative;
-            transition: 0.5s ease; overflow: hidden;
-        }
+        .card { background: linear-gradient(180deg, #0d0b06 0%, #050505 100%); border: 1px solid var(--borde); position: relative; transition: 0.5s ease; overflow: hidden; }
         .card:hover { border-color: var(--oro); }
 
         .img-wrap { aspect-ratio: 9/12; overflow: hidden; position: relative; }
         .img-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: 0.8s; }
         .card:hover .img-wrap img { opacity: 1; transform: scale(1.05); }
         
-        .intensity-tag {
-            position: absolute; top: 20px; right: 20px;
-            font-size: 8px; letter-spacing: 2px; color: var(--oro);
-            background: rgba(0,0,0,0.8); padding: 5px 12px; border: 1px solid var(--oro);
-        }
+        .intensity-tag { position: absolute; top: 15px; right: 15px; font-size: 8px; letter-spacing: 2px; color: var(--oro); background: rgba(0,0,0,0.8); padding: 4px 10px; border: 1px solid var(--oro); }
 
-        .info { padding: 35px; text-align: center; }
-        .p-brand { font-size: 9px; letter-spacing: 4px; color: var(--oro); text-transform: uppercase; margin-bottom: 10px; }
-        .p-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #fff; margin-bottom: 15px; font-weight: 400; }
-        .p-desc { font-size: 13px; color: #b0a89a; font-style: italic; line-height: 1.6; margin-bottom: 20px; }
+        .info { padding: 30px; text-align: center; }
+        .p-brand { font-size: 9px; letter-spacing: 3px; color: var(--oro); text-transform: uppercase; margin-bottom: 10px; }
+        .p-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+        .p-desc { font-size: 13px; color: #b0a89a; font-style: italic; line-height: 1.5; margin-bottom: 20px; }
 
-        .pyramid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-            border-top: 1px solid rgba(201,168,76,0.15); padding-top: 25px;
-        }
-        .pyr-label { font-size: 7px; text-transform: uppercase; color: var(--oro); margin-bottom: 5px; }
-        .pyr-val { font-size: 9px; font-weight: 300; }
+        .pyramid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; border-top: 1px solid rgba(201,168,76,0.15); padding-top: 20px; }
+        .pyr-label { font-size: 7px; text-transform: uppercase; color: var(--oro); margin-bottom: 4px; }
+        .pyr-val { font-size: 9px; font-weight: 300; line-height: 1.2; }
 
-        .price { margin-top: 30px; font-size: 22px; color: #fff; font-weight: 500; letter-spacing: 2px; }
+        .price { margin-top: 25px; font-size: 20px; color: #fff; font-weight: 500; letter-spacing: 1px; }
 
-        .wa-float {
-            position: fixed; bottom: 35px; right: 35px; background: var(--oro);
-            color: #000; width: 60px; height: 60px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-decoration: none; font-size: 26px; z-index: 1000;
-        }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--oro); color: #000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); text-decoration: none; font-size: 26px; z-index: 1000; }
     </style>
 </head>
 <body>
@@ -143,7 +95,6 @@
     <a href="https://chatgpt.com/g/g-69ab77813a588191ade54c483189e33e-oraculo-de-aceites-arabes" target="_blank" class="oracle-btn">
         CONSULTAR AL ORÁCULO
     </a>
-    <p class="oracle-sub">Una experiencia de curaduría con Inteligencia Artificial.</p>
 </section>
 
 <div class="section-title"><h2>Línea Iniciación</h2></div>
@@ -159,42 +110,51 @@
 
 <script>
     const CATALOGO = [
-        { f: "choco-musk.png", n: "Choco Musk", m: "Al Rehab", l: "Iniciación", p: "55.000", s: "Canela", c: "Chocolate", b: "Almizcle", i: "Media", d: "Un abrazo dulce en forma de perfume." },
-        { f: "sabaya.png", n: "Sabaya", m: "Al Rehab", l: "Iniciación", p: "55.000", s: "Cítricos", c: "Rosa", b: "Almizcle Blanco", i: "Media", d: "Frescura floral de mañana." },
-        { f: "sultan.png", n: "Sultan", m: "Al Rehab", l: "Iniciación", p: "50.000", s: "Bergamota", c: "Cedro", b: "Ámbar", i: "Media", d: "Elegancia discreta y masculina." },
-        { f: "amber.png", n: "Amber", m: "Nabeel", l: "Umbral", p: "50.000", s: "Especias", c: "Ámbar", b: "Pachulí", i: "Fuerte", d: "El calor del oro líquido." },
-        { f: "nasaem.png", n: "Nasaem", m: "Nabeel", l: "Umbral", p: "50.000", s: "Aldehídos", c: "Orquídea", b: "Oud", i: "Media", d: "Equilibrio entre frescura y misterio." },
-        { f: "hareem.png", n: "Hareem Al Sultan Gold", m: "Khadlaj", l: "Royalty", p: "160.000", s: "Manzana", c: "Jazmín", b: "Ámbar", i: "Fuerte", d: "La esencia de la realeza femenina." },
-        { f: "layali.png", n: "Layali", m: "Swiss Arabian", l: "Royalty", p: "145.000", s: "Grosella", c: "Orquídea", b: "Oud", i: "Muy Fuerte", d: "El misterio de las noches árabes." },
-        { f: "noora.png", n: "Noora Onyx", m: "Swiss Arabian", l: "Royalty", p: "160.000", s: "Cuero", c: "Romero", b: "Vetiver", i: "Fuerte", d: "Autoridad, cuero y presencia." }
+        // INICIACIÓN
+        { f: "choco-musk.png", n: "Choco Musk", m: "Al Rehab", l: "Iniciación", p: "55.000", s: "Canela, Rosas", c: "Chocolate, Vainilla", b: "Almizcle", i: "Media", d: "Un abrazo dulce en forma de perfume." },
+        { f: "sabaya.png", n: "Sabaya", m: "Al Rehab", l: "Iniciación", p: "55.000", s: "Cítricos, Manzana", c: "Rosa, Jazmín", b: "Almizcle Blanco", i: "Media", d: "Frescura floral como una mañana de primavera." },
+        { f: "sultan.png", n: "Sultan", m: "Al Rehab", l: "Iniciación", p: "50.000", s: "Bergamota, Cardamomo", c: "Cedro, Sándalo", b: "Vainilla, Ámbar", i: "Media", d: "Elegancia discreta con carácter propio." },
+        { f: "avenue.png", n: "Avenue", m: "Al Rehab", l: "Iniciación", p: "50.000", s: "Cítricos, Aire", c: "Jazmín, Oud suave", b: "Vainilla, Ámbar", i: "Media", d: "El ritmo de la ciudad en un frasco." },
+        
+        // UMBRAL
+        { f: "amber.png", n: "Amber", m: "Nabeel", l: "Umbral", p: "50.000", s: "Especias, Maderas", c: "Ámbar, Labdanum", b: "Oud, Maderas", i: "Fuerte", d: "El calor del oro líquido." },
+        { f: "nasaem.png", n: "Nasaem", m: "Nabeel", l: "Umbral", p: "50.000", s: "Piña, Bergamota", c: "Orquídea, Rosa", b: "Oud, Vainilla", i: "Media", d: "Equilibrio entre frescura y misterio." },
+
+        // ROYALTY
+        { f: "hareem.png", n: "Hareem Al Sultan Gold", m: "Khadlaj", l: "Royalty", p: "160.000", s: "Manzana, Bergamota", c: "Gardenia, Jazmín", b: "Vainilla, Ámbar", i: "Fuerte", d: "La esencia de la realeza femenina." },
+        { f: "rafia.png", n: "Rafia Gold", m: "Al Haramain", l: "Royalty", p: "150.000", s: "Azafrán, Geranio", c: "Rosa, Maderas", b: "Ámbar, Pachulí", i: "Fuerte", d: "Oro especiado para almas brillantes." },
+        { f: "layali.png", n: "Layali", m: "Swiss Arabian", l: "Royalty", p: "145.000", s: "Anís, Frutas Oscuras", c: "Orquídea, Rosa", b: "Oud, Sándalo", i: "Muy Fuerte", d: "El misterio de las noches árabes." },
+        { f: "mera.png", n: "Mera", m: "Hamidi", l: "Royalty", p: "140.000", s: "Naranja, Flores Blancas", c: "Flores, Ámbar", b: "Maderas", i: "Media", d: "Sofisticación moderna y versatilidad." },
+        { f: "adwaa.png", n: "Adwaa Al Sharq", m: "Afnan", l: "Royalty", p: "160.000", s: "Especias, Ámbar", c: "Ámbar, Rosa", b: "Maderas, Almizcle", i: "Fuerte", d: "El poder del oriente profundo." },
+        { f: "noora.png", n: "Noora Onyx", m: "Swiss Arabian", l: "Royalty", p: "160.000", s: "Cuero, Romero", c: "Romero, Vetiver", b: "Cuero, Oud", i: "Fuerte", d: "Autoridad, cuero y presencia." }
     ];
 
-    function createCard(item) {
+    function createCard(p) {
         return `
             <div class="card">
                 <div class="img-wrap">
-                    <img src="${item.f}" alt="${item.n}">
-                    <div class="intensity-tag">${item.i}</div>
+                    <img src="${p.f}" alt="${p.n}">
+                    <div class="intensity-tag">${p.i}</div>
                 </div>
                 <div class="info">
-                    <div class="p-brand">${item.m}</div>
-                    <h3 class="p-name">${item.n}</h3>
-                    <p class="p-desc">${item.d}</p>
+                    <div class="p-brand">${p.m}</div>
+                    <h3 class="p-name">${p.n}</h3>
+                    <p class="p-desc">${p.d}</p>
                     <div class="pyramid">
-                        <div><span class="pyr-label">Salida</span><br><span class="pyr-val">${item.s}</span></div>
-                        <div><span class="pyr-label">Cuerpo</span><br><span class="pyr-val">${item.c}</span></div>
-                        <div><span class="pyr-label">Fondo</span><br><span class="pyr-val">${item.b}</span></div>
+                        <div><span class="pyr-label">Salida</span><br><span class="pyr-val">${p.s}</span></div>
+                        <div><span class="pyr-label">Cuerpo</span><br><span class="pyr-val">${p.c}</span></div>
+                        <div><span class="pyr-label">Fondo</span><br><span class="pyr-val">${p.b}</span></div>
                     </div>
-                    <div class="price">$${item.p} COP</div>
+                    <div class="price">$${p.p} COP</div>
                 </div>
             </div>
         `;
     }
 
-    const sections = { 'Iniciación': 'grid-iniciacion', 'Umbral': 'grid-umbral', 'Royalty': 'grid-royalty' };
+    const grids = { 'Iniciación': 'grid-iniciacion', 'Umbral': 'grid-umbral', 'Royalty': 'grid-royalty' };
     CATALOGO.forEach(p => {
-        const gridId = sections[p.l];
-        if(gridId) document.getElementById(gridId).innerHTML += createCard(p);
+        const id = grids[p.l];
+        if(id) document.getElementById(id).innerHTML += createCard(p);
     });
 </script>
 
