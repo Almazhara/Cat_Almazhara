@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>ALMAZHARA | Catálogo Colombia</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --oro: #c9a84c;
+            --negro: #080808;
+            --marmol: #0d0b06;
+            --texto: #e8e0d0;
+            --borde: rgba(201,168,76,0.22);
+            --safe-top: env(safe-area-inset-top);
+            --safe-bottom: env(safe-area-inset-bottom);
+        }
+
+        body {
+            margin: 0; background: var(--negro); color: var(--texto);
+            font-family: 'Montserrat', sans-serif; -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(circle at top, #151515 0%, #080808 100%);
+            padding-bottom: calc(100px + var(--safe-bottom));
+        }
+
+        header {
+            text-align: center; padding: calc(50px + var(--safe-top)) 20px 30px;
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .logo-img { width: clamp(160px, 50vw, 240px); height: auto; filter: drop-shadow(0 0 10px rgba(201,168,76,0.2)); }
+
+        .grid {
+            display: grid; grid-template-columns: 1fr; gap: 25px; padding: 25px;
+            max-width: 800px; margin: 0 auto;
+        }
+
+        @media (min-width: 600px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+        .card {
+            background: var(--marmol); border: 1px solid var(--borde);
+            border-radius: 4px; overflow: hidden; display: flex; flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .card:active { transform: scale(0.98); }
+
+        .img-box { position: relative; width: 100%; aspect-ratio: 9/13; background: #000; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .badge {
+            position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.8);
+            border: 1px solid var(--oro); color: var(--oro); padding: 5px 12px;
+            font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        .info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .marca { font-size: 9px; color: var(--oro); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+        .nombre { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #fff; margin-bottom: 15px; line-height: 1.2; }
+
+        .notes { display: flex; gap: 5px; margin-bottom: 20px; }
+        .note-item { flex: 1; background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.1); padding: 6px 2px; text-align: center; }
+        .n-label { font-size: 7px; text-transform: uppercase; color: var(--oro); display: block; margin-bottom: 2px; }
+        .n-val { font-size: 9px; color: var(--texto); }
+
+        .card-footer {
+            margin-top: auto; padding-top: 15px; border-top: 1px solid var(--borde);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .price-label { font-size: 9px; color: #8a8070; text-transform: uppercase; }
+        .price-val { font-size: 18px; color: var(--oro); font-weight: 600; }
+
+        .wa-btn {
+            position: fixed; bottom: calc(25px + var(--safe-bottom)); right: 25px;
+            background: #25d366; color: white; width: 60px; height: 60px;
+            border-radius: 30px; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4); text-decoration: none; font-size: 30px; z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo_almazhara.png" class="logo-img" alt="ALMAZHARA">
+</header>
+
+<div id="catalog" class="grid"></div>
+
+<a href="https://wa.me/573203787206?text=Hola! Me interesa una fragancia de tu catálogo ALMAZHARA." class="wa-btn" target="_blank">💬</a>
+
+<script>
+    const PRODUCTS = [
+        { f: "avenue.png", n: "Avenue", m: "Al Rehab", p: "50.000", l: "Core", s: "Limón", c: "Pachulí", b: "Almizcle" },
+        { f: "amber.png", n: "Amber", m: "Nabeel", p: "50.000", l: "Core", s: "Ámbar", c: "Maderas", b: "Especias" },
+        { f: "nasaem.png", n: "Nasaem", m: "Nabeel", p: "50.000", l: "Core", s: "Aldehídos", c: "Flores", b: "Oud" },
+        { f: "sabaya.png", n: "Sabaya", m: "Al Rehab", p: "55.000", l: "Core", s: "Cítricos", c: "Rosa", b: "Verde" },
+        { f: "sultan.png", n: "Sultan", m: "Al Rehab", p: "50.000", l: "Core", s: "Cedro", c: "Enebro", b: "Sándalo" },
+        { f: "choco-musk.png", n: "Choco Musk", m: "Al Rehab", p: "55.000", l: "Core", s: "Cacao", c: "Vainilla", b: "Almizcle" },
+        { f: "layali.png", n: "Layali", m: "Swiss Arabian", p: "145.000", l: "Royalty", s: "Ciruela", c: "Ylang", b: "Ámbar" },
+        { f: "hareem.png", n: "Hareem Al Sultan Gold", m: "Khadlaj", p: "160.000", l: "Royalty", s: "Manzana", c: "Jazmín", b: "Pachulí" },
+        { f: "rafia.png", n: "Rafia Gold", m: "Al Haramain", p: "150.000", l: "Royalty", s: "Azafrán", c: "Cedro", b: "Vainilla" },
+        { f: "mera.png", n: "Mera", m: "Hamidi", p: "140.000", l: "Royalty", s: "Naranja", c: "Flores", b: "Ámbar" },
+        { f: "adwaa.png", n: "Adwaa Al Sharq", m: "Afnan", p: "160.000", l: "Royalty", s: "Especias", c: "Ámbar", b: "Maderas" },
+        { f: "noora.png", n: "Noora Onyx", m: "Swiss Arabian", p: "160.000", l: "Royalty", s: "Cuero", c: "Romero", b: "Vetiver" }
+    ];
+
+    document.getElementById('catalog').innerHTML = PRODUCTS.map(p => `
+        <div class="card">
+            <div class="img-box">
+                <div class="badge">${p.l}</div>
+                <img src="${p.f}" alt="${p.n}" loading="lazy">
+            </div>
+            <div class="info">
+                <span class="marca">${p.m}</span>
+                <h2 class="nombre">${p.n}</h2>
+                <div class="notes">
+                    <div class="note-item"><span class="n-label">Salida</span><span class="n-val">${p.s}</span></div>
+                    <div class="note-item"><span class="n-label">Corazón</span><span class="n-val">${p.c}</span></div>
+                    <div class="note-item"><span class="n-label">Base</span><span class="n-val">${p.b}</span></div>
+                </div>
+                <div class="card-footer">
+                    <span class="price-label">Inversión</span>
+                    <span class="price-val">$${p.p} COP</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+</script>
+
+</body>
+</html>
