@@ -3,153 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>ALMAZHARA | Essence & Skin Care</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <title>ALMAZHARA | Tu Huella Olfativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --oro: #c9a84c;
-            --oro-brillante: #f1d58a;
-            --negro-velvet: #050505;
-            --marmol: #0d0b06;
+            --oro-suave: #d4bc7d;
+            --negro-profundo: #050505;
+            --marmol-fondo: #0a0a0a;
             --texto: #e8e0d0;
-            --borde-oro: rgba(201,168,76,0.3);
+            --borde: rgba(201,168,76,0.25);
             --safe-top: env(safe-area-inset-top);
-            --safe-bottom: env(safe-area-inset-bottom);
         }
 
-        /* Escenario Velvet */
         body {
-            margin: 0; background: var(--negro-velvet); color: var(--texto);
+            margin: 0; background: var(--negro-profundo); color: var(--texto);
             font-family: 'Montserrat', sans-serif; -webkit-font-smoothing: antialiased;
-            background-image: radial-gradient(circle at 50% -20%, #1a150a 0%, #050505 80%);
-            padding-bottom: calc(100px + var(--safe-bottom));
+            background-image: radial-gradient(circle at 50% 0%, #1a150a 0%, #050505 70%);
         }
 
-        /* Header de Alta Gama */
+        /* Branding e Introducción */
         header {
             text-align: center; padding: calc(60px + var(--safe-top)) 20px 40px;
-            border-bottom: 1px solid var(--borde-oro);
         }
-        .logo-img { width: 180px; filter: drop-shadow(0 0 20px rgba(201,168,76,0.15)); margin-bottom: 15px; }
-        .brand-title { 
-            font-family: 'Cormorant Garamond', serif; font-size: 38px; 
-            letter-spacing: 12px; color: #fff; text-transform: uppercase; font-weight: 300;
-        }
-        .brand-legend { 
-            font-size: 10px; letter-spacing: 6px; color: var(--oro); 
-            text-transform: uppercase; font-weight: 400; margin-top: 10px;
-        }
-
-        /* Grid Dinámico */
-        .grid {
-            display: grid; grid-template-columns: 1fr; gap: 40px; padding: 40px 20px;
-            max-width: 900px; margin: 0 auto;
-        }
-        @media (min-width: 650px) { .grid { grid-template-columns: 1fr 1fr; } }
-
-        /* Tarjeta Estilo Podio de Mármol */
-        .card {
-            background: linear-gradient(145deg, #0d0b06 0%, #050505 100%);
-            border: 1px solid var(--borde-oro); border-radius: 2px;
-            overflow: hidden; position: relative;
-            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-            animation: fadeIn 0.8s ease-out forwards; opacity: 0;
-        }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        .card:hover { border-color: var(--oro); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.8); }
-
-        .img-box { position: relative; width: 100%; aspect-ratio: 9/13; overflow: hidden; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-        .card:hover .img-box img { transform: scale(1.05); }
+        .logo-main { width: 160px; margin-bottom: 25px; filter: drop-shadow(0 0 15px rgba(201,168,76,0.2)); }
         
-        .badge {
-            position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7);
-            border: 1px solid var(--oro); color: var(--oro); padding: 6px 14px;
-            font-size: 9px; letter-spacing: 3px; text-transform: uppercase; backdrop-filter: blur(5px);
-        }
-
-        .info { padding: 30px; text-align: center; }
-        .marca { font-size: 10px; color: var(--oro); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 8px; font-weight: 300; }
-        .nombre { 
+        .intro-container { max-width: 600px; margin: 0 auto 50px; padding: 0 20px; }
+        .intro-title { 
             font-family: 'Cormorant Garamond', serif; font-size: 28px; 
-            color: #fff; margin-bottom: 20px; font-weight: 400; letter-spacing: 1px;
+            color: #fff; font-weight: 300; font-style: italic; line-height: 1.4;
+        }
+        .intro-line { width: 40px; height: 1px; background: var(--oro); margin: 20px auto; }
+
+        /* Estructura de Secciones */
+        .section-header {
+            text-align: center; margin: 60px 0 30px; position: relative;
+        }
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif; font-size: 32px;
+            letter-spacing: 6px; text-transform: uppercase; color: var(--oro);
+            font-weight: 400;
+        }
+        .section-desc {
+            font-size: 10px; letter-spacing: 3px; color: #8a8070; text-transform: uppercase;
+            margin-top: 5px;
         }
 
-        /* Ingredientes - Rigor Ortográfico */
-        .notes-container {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-            margin-bottom: 25px; border-top: 1px solid rgba(201,168,76,0.1); padding-top: 20px;
+        .grid {
+            display: grid; grid-template-columns: 1fr; gap: 40px; padding: 0 25px 60px;
+            max-width: 1000px; margin: 0 auto;
         }
-        .note-box { text-align: center; }
-        .n-label { font-size: 8px; color: var(--oro); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 5px; }
-        .n-val { font-size: 10px; color: var(--texto); font-weight: 200; }
+        @media (min-width: 700px) { .grid { grid-template-columns: 1fr 1fr; } }
 
-        .price-tag {
-            background: linear-gradient(to right, transparent, rgba(201,168,76,0.1), transparent);
-            padding: 15px; margin-top: 10px; border-radius: 4px;
+        /* Tarjeta Evolucionada */
+        .card {
+            background: linear-gradient(180deg, #0d0b06 0%, #050505 100%);
+            border: 1px solid var(--borde); border-radius: 2px;
+            display: flex; flex-direction: column; overflow: hidden;
+            transition: all 0.4s ease;
         }
-        .price-val { font-size: 22px; color: var(--oro-brillante); font-weight: 600; letter-spacing: 1px; }
 
-        /* Botón WhatsApp de Lujo */
-        .wa-btn {
-            position: fixed; bottom: calc(30px + var(--safe-bottom)); right: 30px;
-            background: var(--oro); color: #000; width: 65px; height: 65px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6); text-decoration: none; font-size: 28px; z-index: 100;
-            transition: all 0.3s ease; border: 2px solid var(--oro-brillante);
+        .img-container { position: relative; aspect-ratio: 9/12; background: #000; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+        
+        .tag-intensidad {
+            position: absolute; bottom: 15px; left: 15px;
+            font-size: 9px; letter-spacing: 1px; color: var(--oro);
+            background: rgba(0,0,0,0.7); padding: 4px 10px; border: 0.5px solid var(--oro);
         }
-        .wa-btn:hover { transform: scale(1.1); background: var(--oro-brillante); }
+
+        .info-panel { padding: 30px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
+        .marca-tag { font-size: 9px; letter-spacing: 3px; color: var(--oro); text-transform: uppercase; margin-bottom: 10px; }
+        .nombre-perfume { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+        
+        .descripcion-corta { font-size: 13px; font-weight: 300; line-height: 1.6; color: #b0a89a; margin-bottom: 20px; font-style: italic; }
+
+        .caracteristicas {
+            display: flex; justify-content: center; gap: 15px; margin-bottom: 25px;
+            font-size: 10px; color: var(--oro-suave); text-transform: uppercase; letter-spacing: 1px;
+        }
+        .item-feat { border-bottom: 1px solid rgba(201,168,76,0.2); padding-bottom: 4px; }
+
+        .notas-mini {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+            padding-top: 20px; border-top: 1px dotted rgba(201,168,76,0.2); margin-top: auto;
+        }
+        .n-box span { display: block; }
+        .n-tit { font-size: 7px; text-transform: uppercase; color: var(--oro); margin-bottom: 4px; }
+        .n-val { font-size: 9px; color: var(--texto); font-weight: 300; }
+
+        .price-box { margin-top: 25px; font-size: 20px; color: #fff; font-weight: 600; letter-spacing: 1px; }
+
+        .btn-wa {
+            position: fixed; bottom: 30px; right: 30px; background: var(--oro);
+            color: #000; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); text-decoration: none; font-size: 26px; z-index: 100;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo_almazhara.png" class="logo-img" alt="ALMAZHARA">
-    <h1 class="brand-title">ALMAZHARA</h1>
-    <p class="brand-legend">ESSENCE & SKIN CARE</p>
+    <img src="logo_almazhara.png" class="logo-main" alt="ALMAZHARA">
+    <div class="intro-container">
+        <h1 class="intro-title">Bienvenido a tu viaje en la búsqueda de tu huella olfativa.</h1>
+        <div class="intro-line"></div>
+    </div>
 </header>
 
-<div id="catalog" class="grid"></div>
+<div class="section-header">
+    <h2>Línea Iniciación</h2>
+    <p class="section-desc">El primer paso en el arte del attar</p>
+</div>
+<div id="grid-iniciacion" class="grid"></div>
 
-<a href="https://wa.me/573203787206?text=Hola! Deseo adquirir una fragancia de ALMAZHARA." class="wa-btn" target="_blank">💬</a>
+<div class="section-header">
+    <h2>Línea Umbral</h2>
+    <p class="section-desc">Profundidad y carácter oriental</p>
+</div>
+<div id="grid-umbral" class="grid"></div>
+
+<div class="section-header">
+    <h2>Línea Royalty</h2>
+    <p class="section-desc">La máxima expresión del lujo árabe</p>
+</div>
+<div id="grid-royalty" class="grid"></div>
+
+<a href="https://wa.me/573203787206?text=Hola! Quiero iniciar mi viaje olfativo con ALMAZHARA." class="btn-wa">💬</a>
 
 <script>
-    const PRODUCTS = [
-        { f: "avenue.png", n: "Avenue", m: "Al Rehab", p: "50.000", l: "Core", s: "Limón", c: "Pachulí", b: "Almizcle" },
-        { f: "amber.png", n: "Amber", m: "Nabeel", p: "50.000", l: "Core", s: "Ámbar", c: "Maderas", b: "Especias" },
-        { f: "nasaem.png", n: "Nasaem", m: "Nabeel", p: "50.000", l: "Core", s: "Aldehídos", c: "Flores", b: "Oud" },
-        { f: "sabaya.png", n: "Sabaya", m: "Al Rehab", p: "55.000", l: "Core", s: "Cítricos", c: "Rosa", b: "Verde" },
-        { f: "sultan.png", n: "Sultan", m: "Al Rehab", p: "50.000", l: "Core", s: "Cedro", c: "Enebro", b: "Sándalo" },
-        { f: "choco-musk.png", n: "Choco Musk", m: "Al Rehab", p: "55.000", l: "Core", s: "Cacao", c: "Vainilla", b: "Almizcle" },
-        { f: "layali.png", n: "Layali", m: "Swiss Arabian", p: "145.000", l: "Royalty", s: "Ciruela", c: "Ylang", b: "Ámbar" },
-        { f: "hareem.png", n: "Hareem Al Sultan Gold", m: "Khadlaj", p: "160.000", l: "Royalty", s: "Manzana", c: "Jazmín", b: "Pachulí" },
-        { f: "rafia.png", n: "Rafia Gold", m: "Al Haramain", p: "150.000", l: "Royalty", s: "Azafrán", c: "Cedro", b: "Vainilla" },
-        { f: "mera.png", n: "Mera", m: "Hamidi", p: "140.000", l: "Royalty", s: "Naranja", c: "Flores", b: "Ámbar" },
-        { f: "adwaa.png", n: "Adwaa Al Sharq", m: "Afnan", p: "160.000", l: "Royalty", s: "Especias", c: "Ámbar", b: "Maderas" },
-        { f: "noora.png", n: "Noora Onyx", m: "Swiss Arabian", p: "160.000", l: "Royalty", s: "Cuero", c: "Romero", b: "Vetiver" }
+    const CATALOGO = [
+        // INICIACIÓN (Al Rehab)
+        { f: "choco-musk.png", n: "Choco Musk", m: "Al Rehab", l: "Iniciación", p: "55.000", s: "Canela", c: "Chocolate", b: "Almizcle", o: "Relax, Noche", i: "Media", d: "Un abrazo dulce en forma de perfume." },
+        { f: "sabaya.png", n: "Sabaya", m: "Al Rehab", l: "Iniciación", p: "55.000", s: "Cítricos", c: "Rosa, Jazmín", b: "Almizcle Blanco", o: "Diario, Oficina", i: "Media", d: "Frescura floral como una mañana de primavera." },
+        { f: "sultan.png", n: "Sultan", m: "Al Rehab", l: "Iniciación", p: "50.000", s: "Bergamota", c: "Cedro, Sándalo", b: "Ámbar", o: "Versátil, Trabajo", i: "Media", d: "Elegancia discreta con carácter propio." },
+        { f: "avenue.png", n: "Avenue", m: "Al Rehab", l: "Iniciación", p: "50.000", s: "Cítricos", c: "Oud suave", b: "Pachulí", o: "Urbano, Citas", i: "Media", d: "El ritmo de la ciudad en un frasco." },
+        
+        // UMBRAL (Nabeel)
+        { f: "amber.png", n: "Amber", m: "Nabeel", l: "Umbral", p: "50.000", s: "Maderas", c: "Ámbar", b: "Oud", o: "Noche, Invierno", i: "Fuerte", d: "El calor del oro líquido." },
+        { f: "nasaem.png", n: "Nasaem", m: "Nabeel", l: "Umbral", p: "50.000", s: "Aldehídos", c: "Orquídea", b: "Oud, Vainilla", o: "Versátil, Elegante", i: "Media", d: "Equilibrio entre frescura y misterio." },
+
+        // ROYALTY (Premium)
+        { f: "hareem.png", n: "Hareem Al Sultan Gold", m: "Khadlaj", l: "Royalty", p: "160.000", s: "Manzana", c: "Gardenia", b: "Ámbar", o: "Gala, Eventos", i: "Fuerte", d: "La esencia de la realeza femenina." },
+        { f: "rafia.png", n: "Rafia Gold", m: "Al Haramain", l: "Royalty", p: "150.000", s: "Azafrán", c: "Rosa", b: "Pachulí", o: "Noche, Formal", i: "Fuerte", d: "Oro especiado para almas brillantes." },
+        { f: "layali.png", n: "Layali", m: "Swiss Arabian", l: "Royalty", p: "145.000", s: "Frutas Oscuras", c: "Orquídea", b: "Oud, Sándalo", o: "Noche, Seducción", i: "Muy Fuerte", d: "El misterio de las noches árabes." },
+        { f: "mera.png", n: "Mera", m: "Hamidi", l: "Royalty", p: "140.000", s: "Naranja", c: "Flores Blancas", b: "Ámbar", o: "Diario, Lujo", i: "Media", d: "Sofisticación moderna y versatilidad." },
+        { f: "adwaa.png", n: "Adwaa Al Sharq", m: "Afnan", l: "Royalty", p: "160.000", l: "Royalty", s: "Azafrán", c: "Ámbar", b: "Maderas", o: "Noche, Poder", i: "Fuerte", d: "El poder del oriente profundo." },
+        { f: "noora.png", n: "Noora Onyx", m: "Swiss Arabian", l: "Royalty", p: "160.000", s: "Cuero", c: "Romero", b: "Vetiver", o: "Autoridad, Noche", i: "Fuerte", d: "Autoridad, cuero y presencia." }
     ];
 
-    document.getElementById('catalog').innerHTML = PRODUCTS.map((p, index) => `
-        <div class="card" style="animation-delay: ${index * 0.1}s">
-            <div class="img-box">
-                <div class="badge">${p.l}</div>
-                <img src="${p.f}" alt="${p.n}" loading="lazy">
-            </div>
-            <div class="info">
-                <span class="marca">${p.m}</span>
-                <h2 class="nombre">${p.n}</h2>
-                <div class="notes-container">
-                    <div class="note-box"><span class="n-label">Salida</span><span class="n-val">${p.s}</span></div>
-                    <div class="note-box"><span class="n-label">Corazón</span><span class="n-val">${p.c}</span></div>
-                    <div class="note-box"><span class="n-label">Base</span><span class="n-val">${p.b}</span></div>
+    function createCard(p) {
+        return `
+            <div class="card">
+                <div class="img-container">
+                    <img src="${p.f}" alt="${p.n}">
+                    <div class="tag-intensidad">Intensidad: ${p.i}</div>
                 </div>
-                <div class="price-tag">
-                    <span class="price-val">$${p.p} COP</span>
+                <div class="info-panel">
+                    <span class="marca-tag">${p.m}</span>
+                    <h3 class="nombre-perfume">${p.n}</h3>
+                    <p class="descripcion-corta">${p.d}</p>
+                    <div class="caracteristicas">
+                        <span class="item-feat">${p.o}</span>
+                    </div>
+                    <div class="notas-mini">
+                        <div class="n-box"><span class="n-tit">Salida</span><span class="n-val">${p.s}</span></div>
+                        <div class="n-box"><span class="n-tit">Cuerpo</span><span class="n-val">${p.c}</span></div>
+                        <div class="n-box"><span class="n-tit">Fondo</span><span class="n-val">${p.b}</span></div>
+                    </div>
+                    <div class="price-box">$${p.p} COP</div>
                 </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }
+
+    const grids = {
+        'Iniciación': document.getElementById('grid-iniciacion'),
+        'Umbral': document.getElementById('grid-umbral'),
+        'Royalty': document.getElementById('grid-royalty')
+    };
+
+    CATALOGO.forEach(p => {
+        if(grids[p.l]) grids[p.l].innerHTML += createCard(p);
+    });
 </script>
+
 </body>
 </html>
